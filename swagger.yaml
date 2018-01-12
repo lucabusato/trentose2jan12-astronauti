@@ -11,7 +11,7 @@ info:
   license:
     name: MIT
     url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
-host: astronauti.herokuapp.com
+host: trentose2jan12-astronautiesame.herokuapp.com
 basePath: /api
 schemes:
   - http
@@ -27,7 +27,7 @@ paths:
       operationId: getallastronauts
       responses:
         200:
-          description: ritorna tutti gli elementi astronauts
+          description: ritorna tutti gli astronauts
           schema:
             type: array
             items:
@@ -37,7 +37,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     post:
-      description: Crea un nuovo astronauts.  Duplicates are allowed
+      description: Crea un nuovo astronauts.
       operationId: addastronauts
       parameters:
         - name: astronauts
@@ -57,7 +57,7 @@ paths:
             $ref: '#/definitions/Error'
   /astronauts/{id}:
     get:
-      description: ritorna astronauts con quel ID
+      description: ritorna l'astronauts con quel ID
       operationId: getastronautsID
       parameters:
         - name: id
