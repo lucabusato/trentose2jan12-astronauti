@@ -107,7 +107,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 definitions:
-  nomeModulo:
+  astronauts:
     allOf:
       - $ref: '#/definitions/Newastronauts'
       - properties:

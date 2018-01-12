@@ -31,31 +31,6 @@ astronauts.route('/astronauts')
     res.json(astronauts)
   });
 astronauts.route('/astronauts/:id')
-  .put((req, res) => {
-    var id = req.params.id
-    const i = astronautsArray.findIndex(item => {return item.id === id})
-    if (i==-1) res.sendStatus(404) //elemento non trovato
-    else {
-        if (req.body.firstName) astronautsArray[i].firstName = req.body.firstName
-        if (req.body.lastName) astronautsArray[i].lastName = req.body.lastName
-        if (req.body.isInSpace) astronautsArray[i].isInSpace = req.body.isInSpace
-        res.status(200)
-        res.json(astronautsArray[i])
-    }
-  })
-  .delete((req, res) => {
-    var id = req.params.id
-    const i = astronautsArray.findIndex(item => {return item.id === id})
-    if (i==-1) res.sendStatus(404) //elemento non trovato
-    else {
-        /*var cancellato = arraynomeModulo[i]*/
-        astronautsArray.splice(i,1) //elimina l'elemento
-        res.status(200)
-        res.json({message: 'deleted'})
-        /*res.json(cancellato})*/
-    }
-  })
-//get one
   .get((req, res) => {
     var id = req.params.id
     const i = astronautsArray.findIndex(item => {return item.id === id})
